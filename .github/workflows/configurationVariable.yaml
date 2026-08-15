@@ -1,0 +1,17 @@
+name: Configuration variable for multiple workflow
+on:
+  workflow_dispatch
+env:
+  cloud: aws-cloud
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Say Hello to Ravi...!!"
+        run: echo "$Greeting $first_Name is using $cloud with ${{vars.project_id}} 
+        env:
+          first_Name: Raviranjan
+    
