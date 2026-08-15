@@ -1,0 +1,14 @@
+name: context variable from Github meta data
+on: 
+  workflow_dispatch
+
+jobs:
+  contextVariable:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "checking context variable"
+        run: |
+          echo "Repository Name ${{github.repository}}"
+          echo "Workflow Name : ${{ github.workflow }}"
+          echo "Triggered by : ${{ github.triggering_actor }}
