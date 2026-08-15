@@ -1,0 +1,17 @@
+name: Variable for single workflow
+on:
+  workflow_dispatch: 
+
+env:
+  cloud: aws-cloud
+
+jobs:
+  greeting-job:
+    runs-on: ubuntu-latest
+    env:
+      greeting: hello
+    steps:
+      - name: "say hello its sunday"
+        run: echo "greeting $first_Name is using $cloud"
+        env:
+          first_Name: Ravi
