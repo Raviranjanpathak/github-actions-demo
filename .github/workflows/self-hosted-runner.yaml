@@ -1,0 +1,18 @@
+name: Self Hosted Runner Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Hello
+        run: echo "Hello from my Azure self-hosted runner"
+
+      - name: Show machine
+        run: hostname
+
+      - name: Show user
+        run: whoami
